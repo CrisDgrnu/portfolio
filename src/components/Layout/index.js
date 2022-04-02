@@ -10,7 +10,7 @@ const Layout = () => {
             <Sidebar />
 
             <div className="page">
-                <span className="tags top-tags"></span>
+                <span className="tags top-tags">&lt;body&gt;</span>
 
                 <Outlet />
 
