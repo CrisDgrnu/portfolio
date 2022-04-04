@@ -3,6 +3,7 @@ import LogoTitle from '../../assets/images/logo-s.png';
 import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
+import Logo from './Logo';
 
 const Home = () => {
     const [letterClass, setletterClass] = useState('text-aniamate');
@@ -10,7 +11,7 @@ const Home = () => {
     const jobArray = 'software engineer.'.split('');
 
     useEffect(() => {
-        return setTimeout(() => {
+        setTimeout(() => {
             setletterClass('text-aniamate-hover');
         }, 4000);
     }, []);
@@ -37,11 +38,12 @@ const Home = () => {
                         idx={22}
                     />
                 </h1>
-                <h2>Fullstack Web Developer / JavaScript Expert</h2>
+                <h2>Fullstack Web Developer / Java & JavaScript Expert</h2>
                 <Link to="/contact" className="flat-button">
                     CONTACT ME
                 </Link>
             </div>
+            <Logo />
         </div>
     );
 };
