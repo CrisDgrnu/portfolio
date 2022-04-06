@@ -8,14 +8,14 @@ $primary-color: #ffd700;
     min-width: 10px;
 }
 
-.text-aniamate-hover {
+.text-animate-hover {
     min-width: 10px;
     display: inline-block;
     animation-fill-mode: both;
 
     &:hover {
         animation: rubberBand 1s;
-        color: $primary-color;
+        color: #ffd700;
     }
 }
 
