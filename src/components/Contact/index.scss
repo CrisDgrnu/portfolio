@@ -1,0 +1,188 @@
+$primary-color: #ffd700;
+$prismarine-blue: #115173;
+$grey: #333;
+
+.contact-form {
+    width: 100%;
+    margin-top: 20px;
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 2s 2s;
+            animation-fill-mode: forwards;
+            clear: both;
+        }
+
+        li.half {
+            width: 49%;
+            margin-left: 2%;
+            float: left;
+            clear: none;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    input[type='text'],
+    input[type='email'] {
+        width: 100%;
+        border: 0;
+        background-color: $prismarine-blue;
+        height: 50px;
+        font-size: 16px;
+        color: white;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        background-color: $prismarine-blue;
+        height: 50px;
+        font-size: 16px;
+        color: white;
+        padding: 20px;
+        min-height: 150px;
+        box-sizing: border-box;
+    }
+
+    .flat-button {
+        color: $primary-color;
+        background: 0 0;
+        font: 11px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        padding: 8px 10px;
+        border: 1px solid $primary-color;
+        float: right;
+        animation: fadeIn 1s 1.8s backwards;
+
+        &:hover {
+            background: $primary-color;
+            color: $grey;
+            cursor: pointer;
+        }
+    }
+}
+
+.contact-card {
+    width: 27%;
+    display: flex;
+    position: absolute;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $prismarine-blue;
+    animation: fadeIn 1s 1.8s backwards;
+    top: 8%;
+
+    img {
+        width: 100%;
+        height: 20%;
+    }
+
+    .contact-data {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        opacity: 0.8;
+
+        h2 {
+            margin: 0;
+            margin-top: 15px;
+            padding: 0 10px;
+            background-color: $prismarine-blue;
+            border-radius: 24px;
+            font-family: 'Coolvetica';
+            font-size: 24px;
+            font-weight: 200;
+        }
+
+        p {
+            margin-top: 5px;
+            margin-bottom: 0;
+            font-family: 'Coolvetica';
+
+            font-size: 18px;
+        }
+
+        hr {
+            width: 90%;
+            margin-bottom: 15px;
+            opacity: 0.8;
+            border-color: $primary-color;
+        }
+
+        .contact-widgets {
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            div {
+                display: flex;
+                justify-content: center;
+                color: $prismarine-blue;
+                font-size: 14px;
+                width: 70%;
+                font-weight: 400;
+                letter-spacing: 3px;
+                padding: 10px 60px;
+                border: 1px solid $prismarine-blue;
+                margin: 5px 0;
+                float: left;
+                animation: fadeIn 1s 1.8s backwards;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: $prismarine-blue;
+                    color: white;
+                }
+            }
+
+            .phone {
+                &::after {
+                    content: 'PHONE';
+                }
+
+                &:hover::after {
+                    content: '618 99 43 73';
+                }
+            }
+
+            .email {
+                &::after {
+                    content: 'EMAIL';
+                }
+
+                &:hover::after {
+                    content: 'cris.dgrnu@gmail.com';
+                }
+            }
+        }
+    }
+}
