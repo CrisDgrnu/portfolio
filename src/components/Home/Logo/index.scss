@@ -12,6 +12,8 @@ $primary-color: #ffd700;
     margin: auto;
     opacity: 0;
     margin-top: 60px;
+    animation: fadeInRight 2s 2s;
+    animation-fill-mode: forwards;
 
     svg {
         width: 100%;
