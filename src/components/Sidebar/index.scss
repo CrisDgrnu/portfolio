@@ -11,7 +11,7 @@ $text-color: #4d4d4e;
     z-index: 3;
     min-height: 500px;
 
-    .log {
+    .logo {
         display: block;
         padding: 8px 0;
     }
@@ -44,6 +44,10 @@ $text-color: #4d4d4e;
             height: 51px;
             position: relative;
             text-decoration: none;
+            
+            span{
+                display: none;
+            }
 
             i {
                 transition: all 0.3s ease-out;
@@ -124,3 +128,82 @@ $text-color: #4d4d4e;
         }
     }
 }
+
+
+@media (max-width: 768px) {
+    .nav-bar-closed{
+        display: none;        
+    }
+    .nav-bar {
+        width: 100%;
+
+        nav {
+            a {
+
+                span{
+                    display: inline;
+                    margin-left: 8px;
+                }
+
+                i {
+                    transition: none;
+                }
+
+                &:hover {
+
+                    color: $text-color;
+
+                    svg {
+                        opacity: 1;
+                    }
+                }
+        
+                &:first-child {
+                    &::after {
+                        content: '';
+                    }
+                }
+            }
+    
+            a.about-link {
+                &:after {
+                    content: '';
+                }
+            }
+    
+            a.contact-link {
+                &:after {
+                    content: '';
+                }
+            }
+            
+            a.active {
+                span {
+                    color: $primary-color;
+                }
+
+            }
+
+            
+        }
+    }
+
+    .burger-button{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background:none;
+        border: none;
+        z-index: 2;
+
+        svg{
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+  }

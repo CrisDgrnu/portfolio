@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import { Link, NavLink } from 'react-router-dom';
 import LogoS from '../../assets/images/logo-s.png';
@@ -8,65 +8,89 @@ import {
     faUser,
     faHome,
     faEnvelope,
+    faBurger,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = () => {
+    const [active, setActive] = useState(false);
+
     return (
-        <div className="nav-bar">
-            <Link className="logo" to="/">
-                <img src={LogoS} alt="logo" />
-                <img
-                    className="sub-logo"
-                    src={LogoSubtitle}
-                    alt="slobodan"
-                />
-            </Link>
+        <>
+            <div className={active ? 'nav-bar' : 'nav-bar-closed nav-bar'}>
+                <Link className="logo" to="/">
+                    <img src={LogoS} alt="logo" />
+                    <img
+                        className="sub-logo"
+                        src={LogoSubtitle}
+                        alt="cristian"
+                    />
+                </Link>
 
-            <nav>
-                <NavLink exact="true" activeclassname="active" to="/">
-                    <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-                </NavLink>
+                <nav>
+                    <NavLink
+                        exact="true"
+                        className="nav-link"
+                        activeclassname="active"
+                        to="/"
+                        onClick={() => setActive(false)}
+                    >
+                        <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+                        <span>Home</span>
+                    </NavLink>
 
-                <NavLink
-                    exact="true"
-                    activeclassname="active"
-                    className="about-link"
-                    to="/about">
-                    <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-                </NavLink>
+                    <NavLink
+                        exact="true"
+                        activeclassname="active"
+                        className="about-link nav-link"
+                        to="/about"
+                        onClick={() => setActive(false)}
+                    >
+                        <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+                        <span>About</span>
+                    </NavLink>
 
-                <NavLink
-                    exact="true"
-                    activeclassname="active"
-                    className="contact-link"
-                    to="/contact">
-                    <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-                </NavLink>
-            </nav>
+                    <NavLink
+                        exact="true"
+                        activeclassname="active"
+                        className="contact-link nav-link"
+                        to="/contact"
+                        onClick={() => setActive(false)}
+                    >
+                        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+                        <span>Contact</span>
+                    </NavLink>
+                </nav>
 
-            <ul>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://www.linkedin.com/in/cristian-de-gracia-nuero-4821aa17b/">
-                        <FontAwesomeIcon
-                            icon={faLinkedin}
-                            color="#4d4d4e"
-                        />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://github.com/CrisDgrnu">
-                        <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
-                    </a>
-                </li>
-            </ul>
-        </div>
+                <ul>
+                    <li>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.linkedin.com/in/cristian-de-gracia-nuero-4821aa17b/"
+                        >
+                            <FontAwesomeIcon
+                                icon={faLinkedin}
+                                color="#4d4d4e"
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/CrisDgrnu"
+                        >
+                            <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <button className="burger-button" onClick={() => setActive(true)}>
+                <FontAwesomeIcon icon={faBurger} color="#ffd700" />
+            </button>
+        </>
     );
 };
 
