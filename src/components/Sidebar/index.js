@@ -14,6 +14,12 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = () => {
     const [active, setActive] = useState(false);
+    const [actualPage, setActualPage] = useState('Home');
+
+    const navigate = (navTo) => {
+        setActive(false);
+        setActualPage(navTo);
+    };
 
     return (
         <>
@@ -33,7 +39,7 @@ const Sidebar = () => {
                         className="nav-link"
                         activeclassname="active"
                         to="/"
-                        onClick={() => setActive(false)}
+                        onClick={() => navigate('Home')}
                     >
                         <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
                         <span>Home</span>
@@ -44,7 +50,7 @@ const Sidebar = () => {
                         activeclassname="active"
                         className="about-link nav-link"
                         to="/about"
-                        onClick={() => setActive(false)}
+                        onClick={() => navigate('About')}
                     >
                         <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
                         <span>About</span>
@@ -55,7 +61,7 @@ const Sidebar = () => {
                         activeclassname="active"
                         className="contact-link nav-link"
                         to="/contact"
-                        onClick={() => setActive(false)}
+                        onClick={() => navigate('Contact')}
                     >
                         <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
                         <span>Contact</span>
@@ -87,9 +93,19 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-            <button className="burger-button" onClick={() => setActive(true)}>
-                <FontAwesomeIcon icon={faBurger} color="#ffd700" />
-            </button>
+            <div className="mobile-navbar">
+                <Link className="logo" to="/">
+                    <img src={LogoS} alt="logo" />
+                </Link>
+
+                <p className="actual-page">{actualPage}</p>
+                <button
+                    className="burger-button"
+                    onClick={() => setActive(true)}
+                >
+                    <FontAwesomeIcon icon={faBurger} color="#ffd700" />
+                </button>
+            </div>
         </>
     );
 };
