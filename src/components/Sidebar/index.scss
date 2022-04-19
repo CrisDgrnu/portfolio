@@ -129,6 +129,10 @@ $text-color: #4d4d4e;
     }
 }
 
+.mobile-navbar {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .nav-bar-closed {
         display: none;
