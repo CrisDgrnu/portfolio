@@ -185,3 +185,9 @@ $grey: #333;
         }
     }
 }
+
+@media (max-width: 768px) {
+    .contact-card {
+        display: none;
+    }
+}

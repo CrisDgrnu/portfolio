@@ -50,11 +50,11 @@ const Contact = () => {
                         />
                     </h1>
                     <p>
-                        I am interested in freelance opportunities - if
-                        your project requires a person who is able to build
-                        scalable and maintainable solutions or maybe if you
-                        have other smaller requests or questions, do not
-                        hesitate to contact me using below form.
+                        I am interested in freelance opportunities - if your
+                        project requires a person who is able to build scalable
+                        and maintainable solutions or maybe if you have other
+                        smaller requests or questions, do not hesitate to
+                        contact me using below form.
                     </p>
 
                     <div className="contact-form">
@@ -91,13 +91,13 @@ const Contact = () => {
                                     <textarea
                                         name="message"
                                         placeholder="Type your message"
-                                        required></textarea>
+                                        required
+                                    ></textarea>
                                 </li>
 
                                 <li>
                                     <input
                                         type="submit"
-                                        value=""
                                         className="flat-button"
                                         value="SEND"
                                     />
@@ -112,8 +112,7 @@ const Contact = () => {
                     <div className="contact-data">
                         <h2>Cristian de Gracia Nuero</h2>
                         <p>
-                            "Currently I'm working on an international
-                            startup"
+                            "Currently I'm working on an international startup"
                         </p>
                         <hr />
                         <div className="contact-widgets">
