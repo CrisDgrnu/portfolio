@@ -28,6 +28,7 @@ $white: #fff;
 }
 
 .bottom-tag-html {
+    margin-top: 10px;
     margin-left: -20px;
 }
 
@@ -123,6 +124,15 @@ $white: #fff;
 }
 
 @media (max-width: 768px) {
+    .tags {
+        left: 290px;
+    }
+
+    .bottom-tag-html {
+        margin-top: 10px;
+        margin-left: -20px;
+    }
+
     .about-page {
         .text-zone {
             width: 60%;
